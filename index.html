@@ -256,6 +256,29 @@
         }
 
         /* MEDIA QUERIES FOR SECTIONS */
+        @media (max-width: 768px) {
+            .about-image-wrapper {
+                margin-right: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-image-wrapper {
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+            }
+            .about-image-wrapper::after {
+                top: 1rem;
+                left: 1rem;
+                right: -1rem;
+                bottom: -1rem;
+            }
+            .hero-image-overlay-card {
+                display: none !important;
+            }
+        }
+
         @media (min-width: 768px) {
             .stats-grid {
                 grid-template-columns: repeat(4, 1fr);

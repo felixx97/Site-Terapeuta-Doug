@@ -76,8 +76,8 @@ function initScrollAnimations() {
     if ('IntersectionObserver' in window) {
         const observerOptions = {
             root: null, // viewport
-            threshold: 0.15, // trigger when 15% of the element is visible
-            rootMargin: '0px 0px -50px 0px' // adjust bottom margin slightly
+            threshold: 0.08, // trigger when 8% of the element is visible (highly responsive on mobile)
+            rootMargin: '0px 0px -30px 0px' // adjust bottom trigger slightly
         };
 
         const observer = new IntersectionObserver((entries, observer) => {

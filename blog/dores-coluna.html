@@ -118,6 +118,35 @@
         .back-to-blog:hover svg {
             transform: translateX(-4px);
         }
+
+        @media (max-width: 576px) {
+            .article-hero {
+                padding: calc(var(--header-height) + 2rem) 0 2rem;
+            }
+            .article-title {
+                font-size: 1.65rem;
+            }
+            .article-container {
+                padding: 0 1rem 3rem;
+            }
+            .article-body h2 {
+                font-size: 1.35rem;
+                margin-top: 2rem;
+            }
+            .article-body {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+            .article-body blockquote {
+                padding-left: 1rem;
+                margin: 1.5rem 0;
+                font-size: 1.1rem;
+            }
+            .article-cta-box {
+                padding: 1.5rem;
+                margin-top: 2.5rem;
+            }
+        }
     </style>
 </head>
 <body>

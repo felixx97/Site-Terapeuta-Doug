@@ -261,7 +261,7 @@ img {
     flex-direction: column;
     gap: 6px;
     padding: 8px;
-    z-index: 1001;
+    z-index: 1020; /* Sit above the mobile drawer menu */
 }
 
 .menu-toggle span {
@@ -292,12 +292,13 @@ img {
     width: 100%;
     height: 100vh;
     background-color: var(--color-bg-light);
-    z-index: 999;
+    z-index: 1010; /* Sit above the header */
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 3rem;
+    overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 .mobile-nav.active {
@@ -468,6 +469,36 @@ img {
 /* ========================================================================
    RESPONSIVE DESIGN MEDIA QUERIES
    ======================================================================== */
+@media (max-width: 767px) {
+    /* Hide CTA in header on mobile to prevent squishing the layout */
+    .header-actions #header-whatsapp-cta {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Fluid smaller h1 for small viewports */
+    h1 {
+        font-size: 2.1rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .mobile-nav {
+        padding: 4rem 1.5rem 2rem;
+    }
+    
+    .mobile-nav-list {
+        gap: 1.5rem;
+    }
+    
+    .mobile-nav-link {
+        font-size: 1.65rem;
+    }
+}
+
 @media (min-width: 768px) {
     h1 {
         font-size: 3.5rem;
