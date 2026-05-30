@@ -1,0 +1,16 @@
+{
+  "name": "terapeuta-douglas-oliver",
+  "version": "1.0.0",
+  "description": "Website de alta conversão para o Terapeuta Douglas Oliver",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y browser-sync start --server --files \"*.html, css/*.css, js/*.js, blog/*.html\""
+  },
+  "keywords": [
+    "landing-page",
+    "massoterapia",
+    "wellness"
+  ],
+  "author": "Douglas Oliver",
+  "license": "ISC"
+}

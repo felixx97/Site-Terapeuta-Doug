@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore o catálogo completo de massoterapia do Terapeuta Douglas Oliver. Agende técnicas como Massagem Terapêutica, Shiatsu, Pedras Quentes, Desportiva e mais.">
+    <title>Menu de Serviços & Terapias Corporais | Terapeuta Douglas Oliver</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Page Specific Styles -->
+    <style>
+        .services-header {
+            padding: calc(var(--header-height) + 4rem) 0 3rem;
+            background: linear-gradient(180deg, rgba(74, 95, 81, 0.04) 0%, transparent 100%);
+            text-align: center;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 4rem;
+        }
+
+        .filter-btn {
+            background-color: var(--color-white);
+            border: 1px solid var(--border-color);
+            padding: 0.65rem 1.5rem;
+            border-radius: 50px;
+            font-family: var(--font-headings);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--color-primary);
+            color: var(--color-bg-light);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER (GLASSMORPHISM) -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Douglas Oliver</span>
+                <span class="logo-sub">Terapeuta</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="servicos.html" class="nav-link active">Serviços</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+
+            <!-- Conversion CTA Button -->
+            <div class="header-actions">
+                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center" id="header-whatsapp-cta">
+                    Agendar Sessão
+                </a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE NAV DRAWER -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Início</a></li>
+            <li><a href="servicos.html" class="mobile-nav-link active">Serviços</a></li>
+            <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        </ul>
+        <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp flex-center">
+            Falar pelo WhatsApp
+        </a>
+    </div>
+
+    <!-- MAIN CATALOG CONTENT -->
+    <main>
+        
+        <!-- SERVICES BANNER HEADER -->
+        <section class="services-header">
+            <div class="container">
+                <span class="badge">Menu Exclusivo</span>
+                <h1>Menu de Terapias Corporais</h1>
+                <p style="max-width: 600px; margin: 1rem auto 0; color: var(--color-text-muted);">
+                    Explore nossa gama de massagens e terapias corporais avançadas. Todas as sessões são adaptadas individualmente para as suas necessidades de dor ou estresse.
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVICES MENU SECTION -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                
+                <!-- Category Filter Buttons -->
+                <div class="filter-container reveal">
+                    <button class="filter-btn active" data-filter="all">Todas as Terapias</button>
+                    <button class="filter-btn" data-filter="terapeutica">Terapêuticas</button>
+                    <button class="filter-btn" data-filter="relaxante">Relaxantes</button>
+                    <button class="filter-btn" data-filter="bem-estar">Estilo de Vida & Bem-Estar</button>
+                </div>
+
+                <!-- Modalities Grid -->
+                <div class="services-grid">
+                    
+                    <!-- 1. Massagem Terapêutica -->
+                    <div class="service-card reveal" data-category="terapeutica">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Terapêutica</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H7V9H1v2h4v11h2v-5h2v5h2v-5h2v5h2V11h4V9z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem Terapêutica</h3>
+                                <span class="service-card-price">R$ 220,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Manipulação corporal profunda focada na liberação miofascial e desativação de pontos gatilhos que causam dores na coluna e ombros.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Contraturas, dores na coluna, torcicolo e fadiga severa.</li>
+                                <li><strong>Benefício:</strong> Alívio imediato e melhora drástica da amplitude articular.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20Terapêutica%20(R$%20220,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Massagem Relaxante -->
+                    <div class="service-card reveal" data-category="relaxante">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Relaxante</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 14a5 5 0 110-10 5 5 0 010 10z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem Relaxante</h3>
+                                <span class="service-card-price">R$ 200,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Movimentos longos e contínuos que acalmam o sistema nervoso, reduzem os níveis de cortisol e combatem as perturbações de ansiedade.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Estresse do dia a dia, estafa mental, insônia.</li>
+                                <li><strong>Benefício:</strong> Relaxamento físico absoluto, desaceleração e leveza.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20Relaxante%20(R$%20200,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Massagem c/ Pedras Quentes -->
+                    <div class="service-card reveal" data-category="relaxante">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Termoterapia</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--color-primary-light) 0%, #6E8E75 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M4 10a4 4 0 014-4h8a4 4 0 014 4v4a4 4 0 01-4 4H8a4 4 0 01-4-4v-4z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem c/ Pedras Quentes</h3>
+                                <span class="service-card-price">R$ 220,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Massagem térmica que combina técnicas manuais com o calor retido de pedras vulcânicas polidas posicionadas em pontos meridianos de energia.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Rigidez severa, fadiga e frio acumulado nas articulações.</li>
+                                <li><strong>Benefício:</strong> Alívio profundo por calor, estimulação circulatória incrível.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    75 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20com%20Pedras%20Quentes%20(R$%20220,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Shiatsu -->
+                    <div class="service-card reveal" data-category="terapeutica">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Oriental</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, #1C271E 0%, var(--color-primary) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M9 10a1 1 0 000-2 1 1 0 000 2zm6 0a1 1 0 000-2 1 1 0 000 2zm-6 4a3 3 0 006 0H9z"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem Shiatsu</h3>
+                                <span class="service-card-price">R$ 220,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Pressão digital vigorosa realizada ao longo dos meridianos (canais energéticos do corpo) para desobstruir canais de tensão vital acumulada.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Pontos de tensão localizada, dores de cabeça tensionais e dores nas costas.</li>
+                                <li><strong>Benefício:</strong> Restaura o fluxo energético natural e elimina contraturas musculares.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20Shiatsu%20(R$%20220,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Massagem Tailandesa -->
+                    <div class="service-card reveal" data-category="bem-estar">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Alongamento Passivo</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary-light) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 4v16m8-8H4"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem Tailandesa</h3>
+                                <span class="service-card-price">R$ 230,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Realizada sobre tatame, utiliza manipulações articulares e alongamentos profundos (ioga passiva) que desbloqueiam o tônus muscular.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Encurtamento muscular, perda de elasticidade e cansaço crônico.</li>
+                                <li><strong>Benefício:</strong> Alívio das articulações e ganho impressionante de flexibilidade.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20Tailandesa%20(R$%20230,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Massagem Lomi Lomi -->
+                    <div class="service-card reveal" data-category="bem-estar">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Havaiana</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, #A8BCA1 0%, var(--color-secondary) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M4.5 12h15m-15 0a7.5 7.5 0 1115 0 7.5 7.5 0 01-15 0z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem Lomi Lomi</h3>
+                                <span class="service-card-price">R$ 240,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Massagem havaiana executada com toques contínuos de antebraço e mãos, que se assemelham ao movimento fluido de ondas do oceano.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Tensões emocionais somatizadas, exaustão mental e bloqueios de fluxo de linfa.</li>
+                                <li><strong>Benefício:</strong> Integração harmônica do corpo físico e sensação incomparável de acolhimento.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20Lomi%20Lomi%20(R$%20240,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Massagem Ayurvédica -->
+                    <div class="service-card reveal" data-category="bem-estar">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Desintoxicação</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, #B5A07A 0%, var(--color-accent) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 3v18M3 12h18"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem Ayurvédica</h3>
+                                <span class="service-card-price">R$ 230,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Une o uso de óleos vegetais e essenciais aquecidos com toques profundos e vigorosos que auxiliam na eliminação de resíduos metabólicos.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Retenção de toxinas corporais, fadiga mental e rigidez profunda.</li>
+                                <li><strong>Benefício:</strong> Restauração da vitalidade (Prana), purificação dos canais celulares e circulação.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20Ayurvédica%20(R$%20230,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Drenagem Linfática -->
+                    <div class="service-card reveal" data-category="bem-estar">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Estética & Saúde</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--color-bg-card) 0%, var(--color-secondary) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm-8 4a8 8 0 1116 0 8 8 0 01-16 0z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Drenagem Linfática</h3>
+                                <span class="service-card-price">R$ 220,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Toques leves, rítmicos e altamente precisos direcionados aos gânglios linfáticos para mobilizar a retenção de fluidos extracelulares.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Retenção de líquidos, pernas cansadas, pós-operatório ou inchaços.</li>
+                                <li><strong>Benefício:</strong> Redução drástica de medidas inflamatórias, estimula sistema imune.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Drenagem%20Linfática%20(R$%20220,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Massagem Desportiva -->
+                    <div class="service-card reveal" data-category="terapeutica">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Performance</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, #2D3E32 0%, #162419 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem Desportiva</h3>
+                                <span class="service-card-price">R$ 200,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Manipulação focada no aumento do fluxo sanguíneo intramuscular para oxigenar tecidos e eliminar acúmulos excessivos de ácido lático.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Pós-treino de alta intensidade, fadiga muscular de atletas.</li>
+                                <li><strong>Benefício:</strong> Redução no tempo de recuperação e prevenção contundente de lesões.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20Desportiva%20(R$%20200,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Massagem com Ventosa -->
+                    <div class="service-card reveal" data-category="terapeutica">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Fisioterapia</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M18.36 6.64a9 9 0 11-12.73 0 9 9 0 0112.73 0z"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Massagem com Ventosa</h3>
+                                <span class="service-card-price">R$ 230,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                A aplicação de copos de ventosa a vácuo suga a fáscia muscular de forma controlada, criando um espaço intercelular rico em fluxo sanguíneo.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Aderências musculares dolorosas e dores lombares persistentes.</li>
+                                <li><strong>Benefício:</strong> Oxigenação local massiva das fibras e alívio rápido das contraturas.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    60 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Massagem%20com%20Ventosa%20(R$%20230,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. Reflexologia -->
+                    <div class="service-card reveal" data-category="relaxante">
+                        <div class="service-card-image-wrapper">
+                            <span class="service-card-tag">Terapia Podal</span>
+                            <div style="width:100%; height:100%; background: linear-gradient(135deg, var(--color-accent-hover) 0%, var(--color-bg-card) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.15)">
+                                <svg width="80" height="80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </div>
+                        </div>
+                        <div class="service-card-content">
+                            <div class="service-card-header">
+                                <h3 class="service-card-title">Reflexologia</h3>
+                                <span class="service-card-price">R$ 90,00</span>
+                            </div>
+                            <p class="service-card-description">
+                                Estimulação de pontos reflexos e microzonas mapeadas nas solas dos pés, enviando sinais de autorregulação e relaxamento a órgãos vitais.
+                            </p>
+                            <ul class="service-card-benefits">
+                                <li><strong>Indicações:</strong> Dores nas solas dos pés, estresse acentuado, fadiga sistêmica.</li>
+                                <li><strong>Benefício:</strong> Alivia tensões gerais do corpo e estimula bem-estar profundo de forma indireta.</li>
+                            </ul>
+                            <div class="service-card-footer">
+                                <span class="service-card-duration">
+                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    40 minutos
+                                </span>
+                                <a href="https://wa.me/5511999999999?text=Olá,%20Douglas!%20Gostaria%20de%20agendar%20uma%20sessão%20de%20Reflexologia%20(R$%2090,00)." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm flex-center">
+                                    Agendar Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- PACKAGES PROMOTION AND RECURRENCE INFO BANNER -->
+                <div class="pricing-banner reveal" style="margin-top: 5rem;">
+                    <div class="pricing-banner-content">
+                        <span class="pricing-banner-badge">Descontos Progressivos</span>
+                        <h3>Contratação de Múltiplas Sessões</h3>
+                        <p>Condições promocionais exclusivas para pacotes fechados de 4, 8 ou 12 sessões mensais. A melhor forma de manter seu corpo livre de dores com economia de até 20%.</p>
+                    </div>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20consultar%20os%20descontos%20e%20valores%20para%20pacotes%20de%20múltiplas%20sessões." target="_blank" rel="noopener noreferrer" class="btn btn-accent flex-center" id="catalog-promo-whatsapp-cta">
+                        Consultar Tabela de Pacotes
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Douglas Oliver</h3>
+                    <p class="logo-sub" style="margin-top: -5px; color: var(--color-accent);">Terapeuta Corporal</p>
+                    <p>Promovendo o equilíbrio físico, alívio de tensões miofasciais e relaxamento absoluto por meio de terapias manuais integradas.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="servicos.html">Serviços & Preços</a></li>
+                        <li><a href="blog.html">Blog Informativo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-info">
+                    <h4>Atendimento</h4>
+                    <p>
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        Rua das Palmeiras, 1024 - Sala 502<br>Jardins, São Paulo - SP
+                    </p>
+                    <p>
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Segunda a Sexta: 08h às 21h<br>Sábado: 09h às 18h
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Terapeuta Douglas Oliver. Todos os direitos reservados. Desenvolvido com foco em alta performance.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon flex-center" aria-label="Instagram"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg></a>
+                    <a href="#" class="social-icon flex-center" aria-label="Facebook"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Links -->
+    <script src="js/main.js"></script>
+    <script src="js/tracker.js"></script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+/* 
+========================================================================
+   TERAPEUTA DOUGLAS OLIVER - COMPONENTS CSS (REUSABLE COMPONENTS)
+========================================================================
+*/
+
+/* ========================================================================
+   BUTTONS
+   ======================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-family: var(--font-headings);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: var(--transition-fast), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-bg-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(45, 62, 50, 0.05);
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+}
+
+.btn-accent:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* WhatsApp High-Conversion CTA */
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #1FAD57 100%);
+    color: var(--color-white);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
+    font-size: 1rem;
+    padding: 1.15rem 2.5rem;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp svg {
+    fill: currentColor;
+    width: 20px;
+    height: 20px;
+}
+
+.btn-sm {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.8rem;
+}
+
+/* ========================================================================
+   SERVICE CARDS (MODALITIES VITRINE)
+   ======================================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(45, 62, 50, 0.15);
+}
+
+.service-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.service-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.service-card:hover .service-card-image {
+    transform: scale(1.08);
+}
+
+.service-card-tag {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    background-color: var(--color-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-family: var(--font-headings);
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.service-card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.service-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+}
+
+.service-card-title {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: var(--color-primary);
+}
+
+.service-card-price {
+    font-family: var(--font-headings);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    white-space: nowrap;
+}
+
+.service-card-description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.service-card-benefits {
+    list-style: none;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.service-card-benefits li {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-card-benefits svg {
+    stroke: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.service-card-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-card-duration {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* ========================================================================
+   TESTIMONIALS (PROVA SOCIAL)
+   ======================================================================== */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(45, 62, 50, 0.12);
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1.25rem;
+}
+
+.testimonial-stars svg {
+    fill: var(--color-accent);
+    stroke: var(--color-accent);
+    width: 16px;
+    height: 16px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+}
+
+.testimonial-author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--color-bg-card);
+}
+
+.testimonial-author-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+}
+
+.testimonial-author-info p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+/* ========================================================================
+   PRICING / PACKAGES CTA BANNER
+   ======================================================================== */
+.pricing-banner {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    color: var(--color-bg-light);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(169, 146, 96, 0.06);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(50px);
+}
+
+.pricing-banner-content {
+    max-width: 600px;
+}
+
+.pricing-banner-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background-color: rgba(169, 146, 96, 0.15);
+    color: var(--color-accent);
+    font-family: var(--font-headings);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 50px;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(169, 146, 96, 0.2);
+}
+
+.pricing-banner h3 {
+    color: var(--color-bg-light);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-banner p {
+    color: rgba(250, 249, 246, 0.8);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* ========================================================================
+   POST CARDS (BLOG CARD)
+   ======================================================================== */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.post-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(45, 62, 50, 0.12);
+}
+
+.post-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.post-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.post-card:hover .post-card-image {
+    transform: scale(1.05);
+}
+
+.post-card-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.post-card-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.post-card-title {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.post-card-title a:hover {
+    color: var(--color-accent);
+}
+
+.post-card-excerpt {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.post-card-link {
+    font-family: var(--font-headings);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: auto;
+}
+
+.post-card-link svg {
+    transition: transform var(--transition-fast);
+}
+
+.post-card:hover .post-card-link svg {
+    transform: translateX(4px);
+}
+
+.post-card-link:hover {
+    color: var(--color-accent);
+}
+
+/* ========================================================================
+   FLOATING WHATSAPP BUTTON (CONVERSION SUPPORT)
+   ======================================================================== */
+.whatsapp-floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366 0%, #1FAD57 100%);
+    border-radius: 50%;
+    color: var(--color-white);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+    z-index: 998;
+    transition: var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.whatsapp-floating:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-floating svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
+/* ========================================================================
+   RESPONSIVE DESIGN MEDIA QUERIES FOR COMPONENTS
+   ======================================================================== */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-banner {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
