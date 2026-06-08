@@ -1,10 +1,14 @@
 /* 
 ========================================================================
-   TERAPEUTA DOUGLAS OLIVER - TRACKING SYSTEM (TRAFFIC CONVERSION HELPER)
+   TERAPEUTA DOUGLAS OLIVER - SISTEMA DE RASTREAMENTO (TELEMETRIA E TRAFFIC)
 ========================================================================
-This script simulates analytics event dispatching (e.g. Meta Pixel, Google Tags).
-It helps check if buttons and CTAs are correctly firing tracking hooks, crucial
-for paid traffic landing pages.
+   Este script simula o envio de eventos de telemetria para plataformas 
+   de anúncios e análise de tráfego pago (como Facebook Pixel e Google Tags).
+   
+   Ele é extremamente útil para landing pages focadas em tráfego de alta
+   conversão, pois permite rastrear cliques exatos nos CTAs de WhatsApp
+   e catalogar a origem de cada conversão.
+========================================================================
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,23 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Main tracking initializer
+ * 1. INICIALIZADOR DO SISTEMA DE RASTREAMENTO
+ * ---------------------------------------------------------------------
+ * Configura escutadores de eventos globais de clique (event delegation) para
+ * capturar interações importantes do usuário e despachar os dados para
+ * o console do desenvolvedor.
  */
 function initTrafficTracking() {
-    console.log('%c🎯 Douglas Oliver Pixel: Ativado e Monitorando Tráfego Pago.', 'color: #2D3E32; font-weight: bold; font-size: 11px; background-color: #FAF9F6; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(45, 62, 50, 0.1);');
+    // Exibe aviso estático no console confirmando a ativação do Pixel de testes
+    console.log(
+        '%c🎯 Douglas Oliver Pixel: Ativado e Monitorando Tráfego Pago.', 
+        'color: #2D3E32; font-weight: bold; font-size: 11px; background-color: #FAF9F6; padding: 4px 8px; border-radius: 4px; border: 1px solid rgba(45, 62, 50, 0.1);'
+    );
 
-    // 1. Track WhatsApp Conversions
+    // Rastreia cliques de conversão que iniciam contato via WhatsApp
     document.body.addEventListener('click', (e) => {
+        // Encontra o link de WhatsApp mais próximo do elemento clicado
         const ctaElement = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"], .btn-whatsapp, .whatsapp-floating');
         
         if (ctaElement) {
             let eventLabel = 'Geral';
             
-            // Deduce source based on element classes or text
+            // Determina a seção exata do site onde o clique ocorreu
             if (ctaElement.classList.contains('whatsapp-floating')) {
                 eventLabel = 'Botão Flutuante (Flutuador)';
             } else if (ctaElement.closest('.hero')) {
-                eventLabel = 'Hero Section (Página Principal)';
+                eventLabel = 'Hero Section (Seção Inicial)';
             } else if (ctaElement.closest('.service-card')) {
                 const titleElement = ctaElement.closest('.service-card').querySelector('.service-card-title');
                 const titleText = titleElement ? titleElement.innerText : 'Serviço Desconhecido';
@@ -39,6 +52,7 @@ function initTrafficTracking() {
                 eventLabel = 'Rodapé da Página';
             }
 
+            // Despacha o evento de telemetria "Lead" (Conversão iniciada)
             dispatchTrackingEvent('Lead', {
                 method: 'WhatsApp',
                 position: eventLabel,
@@ -48,7 +62,7 @@ function initTrafficTracking() {
         }
     });
 
-    // 2. Track "Ver Detalhes" Click on Service Modalities (InitiateCheckout Sim)
+    // Rastreia cliques no botão "Ver Detalhes" (Simula o início do funil - InitiateCheckout)
     document.body.addEventListener('click', (e) => {
         const detailsBtn = e.target.closest('a[href*="servicos.html"]');
         if (detailsBtn && !detailsBtn.href.includes('#')) {
@@ -60,7 +74,7 @@ function initTrafficTracking() {
         }
     });
 
-    // 3. Track Articles Click (ViewContent)
+    // Rastreia visualizações de artigos do blog (ViewContent)
     document.body.addEventListener('click', (e) => {
         const articleLink = e.target.closest('.post-card-link, .post-card-title a');
         if (articleLink) {
@@ -77,10 +91,15 @@ function initTrafficTracking() {
 }
 
 /**
- * Fires custom stylized telemetry signal to console.
- * In a real environment, this connects to `fbq('track', eventName, params)` or `gtag('event', ...)`
- * @param {string} eventName - Standard Pixel event name (e.g. Lead, ViewContent, InitiateCheckout)
- * @param {object} params - Custom key-value pairs representing context
+ * 2. DESPACHANTE DE EVENTOS DE TELEMETRIA
+ * ---------------------------------------------------------------------
+ * Formata os logs de eventos de forma altamente estilizada no console.
+ * Em um ambiente de produção real, esta função é onde você conecta as chamadas
+ * de rastreamento oficiais, como `fbq('track', eventName, params)` do Facebook Pixel
+ * ou `gtag('event', eventName, params)` do Google Analytics.
+ * 
+ * @param {string} eventName - Nome padrão do evento (Lead, InitiateCheckout, ViewContent)
+ * @param {object} params - Objeto contendo dados contextuais do evento
  */
 function dispatchTrackingEvent(eventName, params) {
     const eventStyles = {
@@ -98,6 +117,6 @@ function dispatchTrackingEvent(eventName, params) {
         `${style} font-weight: bold; padding: 2px 5px; border-radius: 0 3px 3px 0;`
     );
     console.log('Parâmetros do Rastreamento:', params);
-    console.log('Instrução de Integração: Para enviar ao Meta Pixel real, integre com fbq("track", "' + eventName + '", ' + JSON.stringify(params) + ');');
+    console.log(`Instrução de Integração Real: Para disparar no Pixel do Facebook real, insira: fbq("track", "${eventName}", ${JSON.stringify(params)});`);
     console.groupEnd();
 }

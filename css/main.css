@@ -348,6 +348,29 @@ img {
     margin-bottom: 0.5rem;
 }
 
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.footer-logo .logo-main {
+    font-family: var(--font-headings);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-bg-light);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.footer-logo .logo-sub {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    margin-top: -2px;
+}
+
 .footer h4 {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;

@@ -64,17 +64,31 @@
     box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
     font-size: 1rem;
     padding: 1.15rem 2.5rem;
+    animation: pulse-green 2.5s infinite;
 }
 
 .btn-whatsapp:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+    animation: none;
 }
 
 .btn-whatsapp svg {
     fill: currentColor;
     width: 20px;
     height: 20px;
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 
 .btn-sm {
@@ -555,6 +569,45 @@
     }
 
     .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ========================================================================
+   INSTAGRAM FEED SECTION
+   ======================================================================== */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+}
+
+.instagram-post-card {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    transition: transform var(--transition-fast);
+}
+
+.instagram-post-card:hover {
+    transform: translateY(-5px);
+}
+
+.instagram-post-card iframe {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+@media (min-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .instagram-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
