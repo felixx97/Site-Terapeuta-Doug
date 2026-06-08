@@ -129,7 +129,7 @@
             border-radius: var(--radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
-            aspect-ratio: 4 / 5; /* Alterado de 6/5 para 4/5 para ficar mais alongado verticalmente */
+            aspect-ratio: 16 / 10; /* Proporção horizontal no mobile para não ocupar toda a tela */
             width: 100%;
         }
 
@@ -276,6 +276,32 @@
 
         /* MEDIA QUERIES FOR SECTIONS */
         @media (max-width: 768px) {
+            .hero {
+                padding: calc(var(--header-height) + 1.5rem) 0 2.5rem;
+                min-height: auto;
+            }
+            .hero-grid {
+                gap: 2rem;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+                margin-bottom: 1rem;
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.5;
+            }
+            .hero-bullets {
+                margin-bottom: 1.75rem;
+                gap: 0.5rem;
+            }
+            .hero-bullets li {
+                font-size: 0.9rem;
+            }
+            .hero-actions-group {
+                margin-bottom: 1rem;
+            }
             .about-image-wrapper {
                 margin-right: 2rem;
                 margin-bottom: 2rem;
@@ -337,6 +363,9 @@
             }
             .hero-actions-group {
                 justify-content: flex-start;
+            }
+            .hero-image-container {
+                aspect-ratio: 4 / 5; /* Retrato alongado no desktop para alinhar com a coluna de texto */
             }
             .about-grid {
                 grid-template-columns: 1fr 1.2fr;
@@ -413,7 +442,7 @@
                         <span class="badge">Atendimento Exclusivo</span>
                         <h1>Restaure seu corpo. <span>Alivie suas dores.</span></h1>
                         <p class="hero-subtitle">
-                            Experiências terapêuticas personalizadas em domicílio ou consultório. Um dos grandes diferenciais do meu trabalho é a realização de experiências terapêuticas em ambientes naturais cuidadosamente escolhidos. Praias, cachoeiras, áreas verdes e outros espaços ao ar livre tornam-se parte do processo de cuidado, ampliando a sensação de presença, tranquilidade e renovação.
+                            Massoterapia personalizada em domicílio ou consultório. Sessões sob medida para o alívio imediato de dores corporais, liberação de tensões e relaxamento profundo.
                         </p>
                         
                         <!-- Value bullet points -->
